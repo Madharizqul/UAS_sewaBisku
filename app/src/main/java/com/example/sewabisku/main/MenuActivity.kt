@@ -22,7 +22,7 @@ class MenuActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.home_fragment)
         supportActionBar?.hide()
 
-        // click listener
+
 
         binding.bus.setOnClickListener {
             startActivity(Intent(this, busfragment::class.java))

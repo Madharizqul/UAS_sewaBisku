@@ -36,21 +36,16 @@ class tambaheditsewabus : AppCompatActivity() {
                 "3 Hari" -> paket1.isChecked = true
                 "1 Minggu"-> paket2.isChecked = true
             }
-            // judul pada halaman edit
             title = "Edit Pelanggan "
-            // menampilkan judul ketika ditekan judul yang direcyclerview
             nama_s_edit.setText(intent.getStringExtra(EXTRA_NAMAP))
-            // menampikan telepon ketika judul di recyclerview ditekan
             tgl_sewa.setText(intent.getStringExtra(EXTRA_TANGGALS))
-            // menampikan number_picker ketika judul di recyclerview ditekan
             bus_s_edit.setText(intent.getStringExtra(EXTRA_BUS))
             harga_sewa.setText(intent.getStringExtra(EXTRA_HARGA))
         } else {
-            // judul tambah catatan
             title = "Form Sewa Bus"
         }
 
-//        pilibus()
+
 
         cekhargasewa(harga_sewa)
     }
@@ -79,7 +74,6 @@ class tambaheditsewabus : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            // id save_note ditekan
             R.id.save_note -> {
                 saveNote()
                 true
@@ -87,7 +81,6 @@ class tambaheditsewabus : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-    // eksekusi saveNote
     private fun saveNote() {
 
         if (nama_s_edit.text.toString().trim().isEmpty()) {

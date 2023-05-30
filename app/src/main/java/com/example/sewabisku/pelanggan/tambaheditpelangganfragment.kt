@@ -25,18 +25,12 @@ class tambaheditpelangganfragment : AppCompatActivity(){
         setContentView(R.layout.tambah_konsumen)
 
         if (intent.hasExtra(EXTRA_ID)) {
-            // judul pada halaman edit
             title = "Edit Pelanggan "
-            // menampilkan judul ketika ditekan judul yang direcyclerview
             nama_p_edit.setText(intent.getStringExtra(EXTRA_NAMA))
-            // menampilkan deskripsi ketika judul di recyclerview ditekan
             email_p_edit.setText(intent.getStringExtra(EXTRA_EMAIL))
-            // menampikan telepon ketika judul di recyclerview ditekan
             telepon_p_edit.setText(intent.getStringExtra(EXTRA_TELEPON))
-            // menampikan number_picker ketika judul di recyclerview ditekan
             alamat_p_edit.setText(intent.getStringExtra(EXTRA_ALAMAT))
         } else {
-            // judul tambah catatan
             title = "Form Pelanggan"
         }
     }
@@ -48,7 +42,6 @@ class tambaheditpelangganfragment : AppCompatActivity(){
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            // id save_note ditekan
             R.id.save_note -> {
                 saveNote()
                 true
@@ -56,7 +49,6 @@ class tambaheditpelangganfragment : AppCompatActivity(){
             else -> super.onOptionsItemSelected(item)
         }
     }
-    // eksekusi saveNote
     private fun saveNote() {
 
         if (nama_p_edit.text.toString().trim().isEmpty()) {
